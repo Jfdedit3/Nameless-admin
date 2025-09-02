@@ -7806,7 +7806,13 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 end
 		 end
  end)
- 
+
+-- [[ ADDING THE MADAHUB COMMAND ]]
+cmd.add({"madahub", "mh"}, {"madahub (mh)", "Opens the MadaHub ScriptHub"}, function(...)
+    local url = "https://rawscripts.net/raw/Universal-Script-Mada-hub-42832"
+    loadstring(game:HttpGet(url, true))()
+end)
+
  cmd.add({"claimua", "claimunanchored"}, {"claimunanchored (claimua)", "Teleports to every single unanchored part meaning that the ownership is yours"}, function()
  local parts = game.Workspace:GetDescendants()
  local targetParts = {}
