@@ -24,23 +24,23 @@
  
  -- Creates folder & files for Prefix & Plugins
  if FileSupport then
- if not isfolder('Mada-Admin2') then
- makefolder('Mada-Admin2')
+ if not isfolder('Mada-Admin') then
+ makefolder('Mada-Admin')
  end
  
- if not isfolder('Mada-Admin2/Plugins') then
-	 makefolder('Mada-Admin2/Plugins')
+ if not isfolder('Mada-Admin/Plugins') then
+	 makefolder('Mada-Admin/Plugins')
  end
  
- if not isfile("Mada-Admin2/Prefix.txt") then
- writefile("Mada-Admin2/Prefix.txt", ';')
+ if not isfile("Mada-Admin/Prefix.txt") then
+ writefile("Mada-Admin/Prefix.txt", ';')
  else
  end
  end
  
  -- [[ PREFIX AND OTHER STUFF. ]] -- 
  local opt = {
-	 prefix = readfile("Mada-Admin2/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
+	 prefix = readfile("Mada-Admin/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
 	 tupleSeparator = ',',	-- ;ff me,others,all | ;ff me/others/all
 	 ui = {					-- never did anything with this
 		 
