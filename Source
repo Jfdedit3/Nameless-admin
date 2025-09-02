@@ -12,8 +12,8 @@
  local Notify = Notification.Notify;
 
  Notify({
-		 Description = "https://discord.gg/pnPVKKdpfd";
-		 Title = "Join the Discord Server!";
+		 Description = "https://scriptblox.com/u/Mada";
+		 Title = "Look my other script on scriptblox!";
 		 Duration = 20;
 		 
 });
@@ -24,23 +24,23 @@
  
  -- Creates folder & files for Prefix & Plugins
  if FileSupport then
- if not isfolder('Nameless-Admin') then
- makefolder('Nameless-Admin')
+ if not isfolder('Mada-Admin2') then
+ makefolder('Mada-Admin2')
  end
  
- if not isfolder('Nameless-Admin/Plugins') then
-	 makefolder('Nameless-Admin/Plugins')
+ if not isfolder('Mada-Admin2/Plugins') then
+	 makefolder('Mada-Admin2/Plugins')
  end
  
- if not isfile("Nameless-Admin/Prefix.txt") then
- writefile("Nameless-Admin/Prefix.txt", ';')
+ if not isfile("Mada-Admin/2Prefix.txt") then
+ writefile("Mada-Admin2/Prefix.txt", ';')
  else
  end
  end
  
  -- [[ PREFIX AND OTHER STUFF. ]] -- 
  local opt = {
-	 prefix = readfile("Nameless-Admin/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
+	 prefix = readfile("Mada-Admin/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
 	 tupleSeparator = ',',	-- ;ff me,others,all | ;ff me/others/all
 	 ui = {					-- never did anything with this
 		 
@@ -51,7 +51,7 @@
  }
  
  -- [[ Version ]] -- 
- currentversion = 1.13
+ currentversion = 2.0
  
  --[[ VARIABLES ]]--
  PlaceId, JobId = game.PlaceId, game.JobId
