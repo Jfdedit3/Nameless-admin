@@ -3966,7 +3966,49 @@ print(Time)
 				  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(clock, 'All')
  
  end)
- 
+
+-- Adding the view/v command using Nameless Admin notification library
+cmd.add({"view", "v"}, {"view <player>", "Allows you to view a player's inventory or info"}, function(args, plr)
+    local notify = require(game.ServerScriptService:WaitForChild("NamelessAdmin"):WaitForChild("Notification"))
+
+    -- Check if a player was provided
+    if not args[2] then
+        notify:Send(plr, {
+            Title = "Error",
+            Text = "Please specify a player.",
+            Duration = 5
+        })
+        return
+    end
+
+    local targetPlayer = game.Players:FindFirstChild(args[2])
+    if not targetPlayer then
+        notify:Send(plr, {
+            Title = "Error",
+            Text = "Player not found.",
+            Duration = 5
+        })
+        return
+    end
+
+    -- Show inventory in notification
+    local inventoryInfo = "Inventory of " .. targetPlayer.Name .. ":\n"
+    if targetPlayer:FindFirstChild("Backpack") then
+        for _, item in pairs(targetPlayer.Backpack:GetChildren()) do
+            inventoryInfo = inventoryInfo .. "- " .. item.Name .. "\n"
+        end
+    else
+        inventoryInfo = inventoryInfo .. "No items found."
+    end
+
+    notify:Send(plr, {
+        Title = "View",
+        Text = inventoryInfo,
+        Duration = 10
+    })
+end)
+
+
  cmd.add({"cartornado", "ctornado"}, {"cartornado (ctornado)", "Tornados a car just sit in the car"}, function(...)
  local SPart = Instance.new("Part");
  local Player = game:GetService('Players').LocalPlayer;
